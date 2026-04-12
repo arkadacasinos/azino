@@ -8,25 +8,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="description" content="Азино777 - официальное казино с мгновенными выплатами, бонусами и тысячами слотов. Вход и регистрация на сайте.">
   <meta name="keywords" content="Азино777, казино, слоты, бонусы, азартные игры, онлайн казино, регистрация, вход">
-  <meta property="og:title" content="Азино777 – Официальный Сайт Казино">
-  <meta property="og:description" content="Азино777 - официальное казино с мгновенными выплатами, бонусами и тысячами слотов. Вход и регистрация на сайте.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tvoidomen.ru">
-  <meta property="og:image" content="https://tvoidomen.ru/images/59.jpg">
-  <meta property="og:site_name" content="Азино777">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Азино777 – Официальный Сайт Казино">
-  <meta name="twitter:description" content="Азино777 - официальное казино с мгновенными выплатами, бонусами и тысячами слотов. Вход и регистрация на сайте.">
-  <meta name="twitter:image" content="https://tvoidomen.ru/images/59.jpg">
   <link rel="canonical" href="https://tvoidomen.ru">
-<title>Азино777 – Официальный Сайт Казино</title>
+  <title>Азино777 – Официальный Сайт Казино</title>
   <link rel="icon" type="image/x-icon" href="/favicon-128.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-57x57.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/apple-touch-icon-60x60.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-128.png">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="tailwindcss.js"></script>
   <style>
     html {scroll-behavior: smooth;}
     .gold-glow {box-shadow:0 0 14px #ffd700aa;}
@@ -373,15 +361,17 @@
 <div>
       <p class="font-bold mb-2 text-sm md:text-base">Платежи</p>
       <div class="grid grid-cols-4 gap-1 md:gap-3 mt-2">
-        <img src="https://tvoidomen.ru/images/86.svg" alt="Golden777 Reels Payment Method 1" class="w-full h-6 md:h-8 object-contain mx-auto">
-        <img src="https://tvoidomen.ru/images/87.svg" alt="Golden777 Reels Payment Method 2" class="w-full h-6 md:h-8 object-contain mx-auto">
-        <img src="https://tvoidomen.ru/images/88.svg" alt="Golden777 Reels Payment Method 3" class="w-full h-6 md:h-8 object-contain mx-auto">
-        <img src="https://tvoidomen.ru/images/90.svg" alt="Golden777 Reels Payment Method 4" class="w-full h-6 md:h-8 object-contain mx-auto">
+        <img src="/images/86.svg" alt="Golden777 Reels Payment Method 1" class="w-full h-6 md:h-8 object-contain mx-auto">
+        <img src="/images/87.svg" alt="Golden777 Reels Payment Method 2" class="w-full h-6 md:h-8 object-contain mx-auto">
+        <img src="/images/88.svg" alt="Golden777 Reels Payment Method 3" class="w-full h-6 md:h-8 object-contain mx-auto">
+        <img src="/images/90.svg" alt="Golden777 Reels Payment Method 4" class="w-full h-6 md:h-8 object-contain mx-auto">
 </div>
 </div>
   </div>
 <div class="text-center text-xs text-gray-500 mt-6">© 2010 – 2025 AZINO777. Все права защищены.</div>
 </footer>
+
+<script src="feather.min.js"></script>
 <script>
     function toggleContent() {
       const hiddenContent = document.getElementById('hiddenContent');
@@ -395,7 +385,6 @@
         btn.textContent = 'Показать еще';
       }
     }
-
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   if (window.innerWidth < 640) {
     document.querySelectorAll('.slide img').forEach(img => {
