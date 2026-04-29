@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    yandex: "12310c400191c245",
+    yandex: "e4a5bc1e70d7f7e3",
   },
   robots: {
     index: true,
