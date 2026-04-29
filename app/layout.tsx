@@ -101,8 +101,7 @@ export default function RootLayout({
       "query-input": "required name=search_term_string",
     },
   }
-
-  return (
+https://leebetcasino1.vercel.app/  return (
     <html lang="ru" className={`${inter.variable} bg-background dark`}>
       <body className="font-sans antialiased bg-background text-foreground">
         {children}
@@ -112,7 +111,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {process.env.NODE_ENV === "production" && <Analytics />}
+
+        <meta name="yandex-verification" content="12310c400191c245" />
       </body>
+    
     </html>
   )
 }
